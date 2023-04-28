@@ -1,27 +1,27 @@
 # name: Send email notification
 on: push
 jobs:
-  email-notification:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: adelynx/github-actions-nodemailer@main
-        with:
-          server_address: smtp.gmail.com
-    # Server port, default 25:
-          server_port: 465
-    # Optional whether this connection use TLS (default is true if server_port is 465)
-          secure: true
-    # Optional (recommended) mail server username:
-          username: ${{secrets.USERNAME}}
-    # Optional (recommended) mail server password:
-          password: ${{secrets.MAIL_PASSWORD}}
-    # Required mail subject:
-          subject: Github Actions job result
-    # Required recipients' addresses:
-          to: amithk@devtools.in, tejaswinid@devtools.in
-    # Required sender full name (address can be skipped):
-          from: Deepa # <user@example.com>
-    # Optional plain body:
-          body: Build job of ${{github.repository}} completed successfully!
-      - run: echo hello world
+  email-notification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: adelynx/github-actions-nodemailer@main
+        with:
+          server_address: smtp.gmail.com
+    # Server port, default 25:
+          server_port: 465
+    # Optional whether this connection use TLS (default is true if server_port is 465)
+          secure: true
+    # Optional (recommended) mail server username:
+          username: ${{secrets.USERNAME}}
+    # Optional (recommended) mail server password:
+          password: ${{secrets.MAIL_PASSWORD}}
+    # Required mail subject:
+          subject: Github Actions job result
+    # Required recipients' addresses:
+          to: amithk@devtools.in, tejaswinid@devtools.in
+    # Required sender full name (address can be skipped):
+          from: Deepa # <user@example.com>
+    # Optional plain body:
+          body: Build job of ${{github.repository}} completed successfully!
+      - run: echo hello world
