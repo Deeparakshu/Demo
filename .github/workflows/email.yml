@@ -1,4 +1,4 @@
-# name: Send email notification
+## name: Send email notification
 on: push
 jobs:
   email-notification:
